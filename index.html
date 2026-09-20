@@ -1,0 +1,1207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Integrated Data & Knowledge Intelligence Platform</title>
+
+  <meta
+    name="description"
+    content="Illustrative functional prototype developed by IDE SpA for UNDP-ZAF-00238."
+  >
+
+  <link rel="stylesheet" href="style.css">
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+  <!-- =========================================================
+       PROTOTYPE NOTICE
+  ========================================================== -->
+
+  <div class="prototype-banner">
+    <strong>Illustrative Functional Prototype</strong>
+    <span>
+      Synthetic demonstration data · Not official UNDP data
+    </span>
+  </div>
+
+
+  <!-- =========================================================
+       APPLICATION SHELL
+  ========================================================== -->
+
+  <div class="app-shell">
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar">
+
+      <div class="brand">
+
+        <div class="brand-mark">
+          ◇
+        </div>
+
+        <div>
+          <div class="brand-name">
+            IDE Intelligence
+          </div>
+
+          <div class="brand-subtitle">
+            Data + Knowledge
+          </div>
+        </div>
+
+      </div>
+
+
+      <nav class="main-nav">
+
+        <button class="nav-item active" data-view="overview">
+          <span class="nav-icon">⌂</span>
+          <span>Executive Overview</span>
+        </button>
+
+        <button class="nav-item" data-view="explorer">
+          <span class="nav-icon">⌁</span>
+          <span>Data Explorer</span>
+        </button>
+
+        <button class="nav-item" data-view="ask">
+          <span class="nav-icon">✦</span>
+          <span>Ask the Data</span>
+        </button>
+
+        <button class="nav-item" data-view="knowledge">
+          <span class="nav-icon">▤</span>
+          <span>Knowledge Portal</span>
+        </button>
+
+        <button class="nav-item" data-view="methodology">
+          <span class="nav-icon">◎</span>
+          <span>Methodology</span>
+        </button>
+
+      </nav>
+
+
+      <div class="sidebar-bottom">
+
+        <div class="prototype-card">
+
+          <div class="prototype-card-label">
+            DEMONSTRATION
+          </div>
+
+          <div class="prototype-card-title">
+            UNDP-ZAF-00238
+          </div>
+
+          <p>
+            Proposed approach for an integrated
+            Data Visualization, Dashboard and
+            Knowledge Portal solution.
+          </p>
+
+        </div>
+
+        <div class="ide-signature">
+          Developed by <strong>IDE SpA</strong>
+        </div>
+
+      </div>
+
+    </aside>
+
+
+    <!-- =======================================================
+         MAIN CONTENT
+    ======================================================== -->
+
+    <main class="main-content">
+
+
+      <!-- TOP BAR -->
+
+      <header class="topbar">
+
+        <div>
+
+          <div class="eyebrow">
+            SOUTH AFRICA · DEVELOPMENT INTELLIGENCE
+          </div>
+
+          <h1 id="page-title">
+            Executive Overview
+          </h1>
+
+        </div>
+
+
+        <div class="topbar-actions">
+
+          <div class="data-status">
+            <span class="status-dot"></span>
+            Synthetic dataset
+          </div>
+
+          <button class="secondary-button" id="methodology-button">
+            About the data
+          </button>
+
+        </div>
+
+      </header>
+
+
+      <!-- =====================================================
+           GLOBAL CONTEXT / FILTERS
+      ====================================================== -->
+
+      <section class="context-panel">
+
+        <div class="context-heading">
+
+          <div>
+            <span class="section-label">
+              ANALYTICAL CONTEXT
+            </span>
+
+            <h2>
+              Explore development patterns
+            </h2>
+          </div>
+
+          <button class="reset-button" id="reset-filters">
+            Reset filters
+          </button>
+
+        </div>
+
+
+        <div class="filter-grid">
+
+          <label class="filter-control">
+
+            <span>Geography</span>
+
+            <select id="province-filter">
+              <option value="all">South Africa</option>
+              <option value="gauteng">Gauteng</option>
+              <option value="western-cape">Western Cape</option>
+              <option value="kwazulu-natal">KwaZulu-Natal</option>
+              <option value="eastern-cape">Eastern Cape</option>
+              <option value="limpopo">Limpopo</option>
+              <option value="mpumalanga">Mpumalanga</option>
+              <option value="north-west">North West</option>
+              <option value="free-state">Free State</option>
+              <option value="northern-cape">Northern Cape</option>
+            </select>
+
+          </label>
+
+
+          <label class="filter-control">
+
+            <span>Theme</span>
+
+            <select id="theme-filter">
+              <option value="employment">Youth Employment</option>
+              <option value="education">Education</option>
+              <option value="digital">Digital Inclusion</option>
+              <option value="wellbeing">Social Wellbeing</option>
+            </select>
+
+          </label>
+
+
+          <label class="filter-control">
+
+            <span>From</span>
+
+            <select id="year-from">
+              <option>2022</option>
+              <option>2023</option>
+              <option>2024</option>
+              <option>2025</option>
+            </select>
+
+          </label>
+
+
+          <label class="filter-control">
+
+            <span>To</span>
+
+            <select id="year-to">
+              <option>2023</option>
+              <option>2024</option>
+              <option>2025</option>
+              <option selected>2026</option>
+            </select>
+
+          </label>
+
+        </div>
+
+      </section>
+
+
+      <!-- =====================================================
+           VIEW 1 — EXECUTIVE OVERVIEW
+      ====================================================== -->
+
+      <section class="view active-view" id="overview-view">
+
+        <div class="view-intro">
+
+          <div>
+            <span class="section-label">
+              EXECUTIVE SIGNALS
+            </span>
+
+            <h2 id="overview-heading">
+              Youth Employment · South Africa
+            </h2>
+
+            <p>
+              A concise view of current patterns, change over time,
+              territorial differences and signals requiring attention.
+            </p>
+          </div>
+
+
+          <button class="ask-view-button" data-open-view="ask">
+            ✦ Ask this view
+          </button>
+
+        </div>
+
+
+        <!-- KPI CARDS -->
+
+        <div class="kpi-grid">
+
+          <article class="kpi-card">
+
+            <div class="kpi-top">
+              <span>Primary indicator</span>
+              <span class="kpi-icon">↗</span>
+            </div>
+
+            <div class="kpi-value" id="kpi-primary">
+              42.8%
+            </div>
+
+            <div class="kpi-change positive">
+              +3.4 pts
+              <span>since 2022</span>
+            </div>
+
+          </article>
+
+
+          <article class="kpi-card">
+
+            <div class="kpi-top">
+              <span>Provincial range</span>
+              <span class="kpi-icon">⌁</span>
+            </div>
+
+            <div class="kpi-value" id="kpi-range">
+              18.6
+            </div>
+
+            <div class="kpi-change neutral">
+              percentage points
+              <span>between provinces</span>
+            </div>
+
+          </article>
+
+
+          <article class="kpi-card">
+
+            <div class="kpi-top">
+              <span>Strongest improvement</span>
+              <span class="kpi-icon">↑</span>
+            </div>
+
+            <div class="kpi-value text-value" id="kpi-best">
+              Gauteng
+            </div>
+
+            <div class="kpi-change positive">
+              +5.2 pts
+              <span>over selected period</span>
+            </div>
+
+          </article>
+
+
+          <article class="kpi-card attention">
+
+            <div class="kpi-top">
+              <span>Attention signal</span>
+              <span class="kpi-icon">!</span>
+            </div>
+
+            <div class="kpi-value text-value" id="kpi-attention">
+              Eastern Cape
+            </div>
+
+            <div class="kpi-change warning">
+              Below benchmark
+              <span>persistent gap</span>
+            </div>
+
+          </article>
+
+        </div>
+
+
+        <!-- MAIN VISUALIZATION GRID -->
+
+        <div class="dashboard-grid">
+
+          <article class="panel trend-panel">
+
+            <div class="panel-header">
+
+              <div>
+                <span class="panel-label">
+                  TREND
+                </span>
+
+                <h3>
+                  Change over time
+                </h3>
+              </div>
+
+              <div class="panel-meta">
+                2022–2026
+              </div>
+
+            </div>
+
+            <div class="chart-container">
+              <canvas id="trend-chart"></canvas>
+            </div>
+
+          </article>
+
+
+          <article class="panel insight-panel">
+
+            <div class="panel-header">
+
+              <div>
+                <span class="panel-label">
+                  INTERPRETATION
+                </span>
+
+                <h3>
+                  What should I notice?
+                </h3>
+              </div>
+
+              <span class="ai-badge">
+                ✦ Evidence assisted
+              </span>
+
+            </div>
+
+
+            <div class="insight-content">
+
+              <div class="insight-number">
+                01
+              </div>
+
+              <div>
+
+                <h4>
+                  Improvement is visible, but uneven.
+                </h4>
+
+                <p id="main-insight">
+                  The national indicator improves across the selected
+                  period, while territorial differences remain substantial.
+                  Gauteng and Western Cape show the strongest positive
+                  trajectories.
+                </p>
+
+              </div>
+
+            </div>
+
+
+            <div class="evidence-link">
+              <span>Evidence basis</span>
+              <strong>
+                5 indicators · 9 provinces · 2022–2026
+              </strong>
+            </div>
+
+          </article>
+
+
+          <article class="panel province-panel">
+
+            <div class="panel-header">
+
+              <div>
+                <span class="panel-label">
+                  TERRITORIAL VIEW
+                </span>
+
+                <h3>
+                  Provincial comparison
+                </h3>
+              </div>
+
+              <button class="text-button" data-open-view="explorer">
+                Explore data →
+              </button>
+
+            </div>
+
+            <div id="province-bars" class="province-bars">
+              <!-- populated by app.js -->
+            </div>
+
+          </article>
+
+
+          <article class="panel priority-panel">
+
+            <div class="panel-header">
+
+              <div>
+                <span class="panel-label">
+                  DECISION SUPPORT
+                </span>
+
+                <h3>
+                  Priority signals
+                </h3>
+              </div>
+
+            </div>
+
+
+            <div class="signal-list">
+
+              <div class="signal-item high">
+
+                <span class="signal-level">
+                  HIGH
+                </span>
+
+                <div>
+                  <strong>Persistent territorial gap</strong>
+                  <p>
+                    Three provinces remain materially below the
+                    national benchmark.
+                  </p>
+                </div>
+
+              </div>
+
+
+              <div class="signal-item medium">
+
+                <span class="signal-level">
+                  WATCH
+                </span>
+
+                <div>
+                  <strong>Uneven rate of improvement</strong>
+                  <p>
+                    Positive national movement masks slower progress
+                    in selected provinces.
+                  </p>
+                </div>
+
+              </div>
+
+
+              <div class="signal-item opportunity">
+
+                <span class="signal-level">
+                  OPPORTUNITY
+                </span>
+
+                <div>
+                  <strong>Transferable positive pattern</strong>
+                  <p>
+                    Higher-performing territories provide comparison
+                    cases for deeper policy analysis.
+                  </p>
+                </div>
+
+              </div>
+
+            </div>
+
+          </article>
+
+        </div>
+
+
+        <!-- CONNECTION TO KNOWLEDGE -->
+
+        <article class="knowledge-bridge">
+
+          <div>
+
+            <span class="section-label">
+              FROM DATA TO KNOWLEDGE
+            </span>
+
+            <h2>
+              Evidence does not end with the chart.
+            </h2>
+
+            <p>
+              Connect analytical patterns with reports, policy briefs,
+              datasets and methodological resources related to the
+              selected context.
+            </p>
+
+          </div>
+
+          <div class="bridge-actions">
+
+            <button class="primary-button" data-open-view="knowledge">
+              View related knowledge
+            </button>
+
+            <button class="secondary-button" data-open-view="ask">
+              Ask about this pattern
+            </button>
+
+          </div>
+
+        </article>
+
+      </section>
+
+
+      <!-- =====================================================
+           VIEW 2 — DATA EXPLORER
+      ====================================================== -->
+
+      <section class="view" id="explorer-view">
+
+        <div class="view-intro">
+
+          <div>
+            <span class="section-label">
+              DATA EXPLORER
+            </span>
+
+            <h2>
+              Move from summary to evidence
+            </h2>
+
+            <p>
+              Compare indicators across geography and time while
+              retaining a transparent connection to the underlying data.
+            </p>
+          </div>
+
+        </div>
+
+
+        <div class="explorer-grid">
+
+          <article class="panel explorer-main">
+
+            <div class="panel-header">
+
+              <div>
+                <span class="panel-label">
+                  COMPARISON
+                </span>
+
+                <h3>
+                  Provincial performance
+                </h3>
+              </div>
+
+            </div>
+
+            <div class="chart-container large">
+              <canvas id="comparison-chart"></canvas>
+            </div>
+
+          </article>
+
+
+          <article class="panel">
+
+            <div class="panel-header">
+
+              <div>
+                <span class="panel-label">
+                  DATA QUALITY
+                </span>
+
+                <h3>
+                  Dataset status
+                </h3>
+              </div>
+
+            </div>
+
+            <div class="quality-metric">
+              <span>Completeness</span>
+              <strong>98.4%</strong>
+            </div>
+
+            <div class="quality-bar">
+              <div style="width:98.4%"></div>
+            </div>
+
+            <div class="quality-metric">
+              <span>Validated records</span>
+              <strong>1,248</strong>
+            </div>
+
+            <div class="quality-metric">
+              <span>Last synthetic update</span>
+              <strong>Sep 2026</strong>
+            </div>
+
+            <button class="secondary-button full-width"
+                    data-open-view="methodology">
+              View methodology
+            </button>
+
+          </article>
+
+        </div>
+
+
+        <article class="panel data-table-panel">
+
+          <div class="panel-header">
+
+            <div>
+              <span class="panel-label">
+                UNDERLYING DATA
+              </span>
+
+              <h3>
+                Traceable records
+              </h3>
+            </div>
+
+            <button class="secondary-button">
+              Export view
+            </button>
+
+          </div>
+
+
+          <div class="table-wrapper">
+
+            <table>
+
+              <thead>
+                <tr>
+                  <th>Province</th>
+                  <th>Indicator</th>
+                  <th>2022</th>
+                  <th>2023</th>
+                  <th>2024</th>
+                  <th>2025</th>
+                  <th>2026</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+
+              <tbody id="data-table-body">
+                <!-- populated by app.js -->
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </article>
+
+      </section>
+
+
+      <!-- =====================================================
+           VIEW 3 — ASK THE DATA
+      ====================================================== -->
+
+      <section class="view" id="ask-view">
+
+        <div class="ask-layout">
+
+          <div class="ask-intro">
+
+            <span class="section-label">
+              AI-ENABLED EXPLORATION
+            </span>
+
+            <h2>
+              Ask the evidence,
+              not a black box.
+            </h2>
+
+            <p>
+              Natural-language exploration is constrained to the
+              validated analytical context. Every answer exposes its
+              evidence basis and assumptions.
+            </p>
+
+
+            <div class="ask-principles">
+
+              <div>
+                <span>01</span>
+                <p>
+                  Uses the currently filtered data.
+                </p>
+              </div>
+
+              <div>
+                <span>02</span>
+                <p>
+                  Makes analytical assumptions explicit.
+                </p>
+              </div>
+
+              <div>
+                <span>03</span>
+                <p>
+                  Links answers back to source indicators.
+                </p>
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <div class="ask-workspace">
+
+            <div class="ask-context">
+
+              <span>Current context</span>
+
+              <strong id="ask-context-text">
+                South Africa · Youth Employment · 2022–2026
+              </strong>
+
+            </div>
+
+
+            <div class="suggested-questions">
+
+              <button>
+                What changed most during this period?
+              </button>
+
+              <button>
+                Which provinces require attention?
+              </button>
+
+              <button>
+                Where is improvement strongest?
+              </button>
+
+            </div>
+
+
+            <div class="question-box">
+
+              <textarea
+                id="question-input"
+                placeholder="Ask a question about the current evidence..."
+              ></textarea>
+
+              <button id="ask-button">
+                Ask the data
+                <span>→</span>
+              </button>
+
+            </div>
+
+
+            <div class="answer-card" id="answer-card">
+
+              <div class="answer-header">
+
+                <span class="ai-badge">
+                  ✦ Evidence-assisted answer
+                </span>
+
+                <span>
+                  Demonstration
+                </span>
+
+              </div>
+
+              <h3>
+                The strongest signal is uneven improvement.
+              </h3>
+
+              <p>
+                The selected indicator improves overall, but progress
+                is not geographically uniform. Gauteng and Western Cape
+                show stronger gains, while Eastern Cape remains below
+                the national benchmark throughout the selected period.
+              </p>
+
+
+              <div class="answer-evidence">
+
+                <strong>Evidence used</strong>
+
+                <div>
+                  National indicator series · Provincial comparison ·
+                  2022–2026
+                </div>
+
+              </div>
+
+
+              <button class="text-button" data-open-view="explorer">
+                Inspect underlying data →
+              </button>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- =====================================================
+           VIEW 4 — KNOWLEDGE PORTAL
+      ====================================================== -->
+
+      <section class="view" id="knowledge-view">
+
+        <div class="view-intro">
+
+          <div>
+
+            <span class="section-label">
+              KNOWLEDGE PORTAL
+            </span>
+
+            <h2>
+              Find the evidence behind the issue
+            </h2>
+
+            <p>
+              Search and connect analytical findings with structured
+              knowledge products, datasets and methodological resources.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div class="knowledge-search">
+
+          <span>⌕</span>
+
+          <input
+            id="knowledge-search-input"
+            type="text"
+            placeholder="Search reports, policy briefs, datasets, methodologies..."
+          >
+
+        </div>
+
+
+        <div class="knowledge-filters">
+
+          <button class="knowledge-filter active">
+            All resources
+          </button>
+
+          <button class="knowledge-filter">
+            Reports
+          </button>
+
+          <button class="knowledge-filter">
+            Policy briefs
+          </button>
+
+          <button class="knowledge-filter">
+            Datasets
+          </button>
+
+          <button class="knowledge-filter">
+            Methodologies
+          </button>
+
+        </div>
+
+
+        <div class="resource-grid" id="resource-grid">
+
+          <article class="resource-card">
+
+            <div class="resource-type">
+              POLICY BRIEF
+            </div>
+
+            <h3>
+              Youth transitions and territorial inequality
+            </h3>
+
+            <p>
+              Illustrative policy analysis connecting labour-market
+              transitions with territorial development patterns.
+            </p>
+
+            <div class="resource-meta">
+              <span>2026</span>
+              <span>South Africa</span>
+              <span>Youth</span>
+            </div>
+
+            <button class="text-button">
+              View resource →
+            </button>
+
+          </article>
+
+
+          <article class="resource-card">
+
+            <div class="resource-type">
+              DATASET
+            </div>
+
+            <h3>
+              Provincial development indicators
+            </h3>
+
+            <p>
+              Synthetic demonstration dataset containing harmonized
+              provincial indicators for the prototype.
+            </p>
+
+            <div class="resource-meta">
+              <span>2022–2026</span>
+              <span>9 provinces</span>
+              <span>CSV</span>
+            </div>
+
+            <button class="text-button">
+              Explore dataset →
+            </button>
+
+          </article>
+
+
+          <article class="resource-card">
+
+            <div class="resource-type">
+              METHODOLOGY
+            </div>
+
+            <h3>
+              Indicator harmonization and validation framework
+            </h3>
+
+            <p>
+              Illustrative methodological note describing data
+              transformation, validation and traceability procedures.
+            </p>
+
+            <div class="resource-meta">
+              <span>Methodology</span>
+              <span>QA</span>
+              <span>Data</span>
+            </div>
+
+            <button class="text-button">
+              View methodology →
+            </button>
+
+          </article>
+
+        </div>
+
+      </section>
+
+
+      <!-- =====================================================
+           VIEW 5 — METHODOLOGY
+      ====================================================== -->
+
+      <section class="view" id="methodology-view">
+
+        <div class="view-intro">
+
+          <div>
+
+            <span class="section-label">
+              TRUST & TRACEABILITY
+            </span>
+
+            <h2>
+              From source data to decision support
+            </h2>
+
+            <p>
+              The proposed architecture keeps transformation,
+              visualization and AI-supported interpretation connected
+              to explicit data and quality rules.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div class="method-grid">
+
+          <article class="method-card">
+
+            <span>01</span>
+
+            <h3>
+              Ingest
+            </h3>
+
+            <p>
+              Receive structured and semi-structured source files and
+              document their provenance.
+            </p>
+
+          </article>
+
+
+          <article class="method-card">
+
+            <span>02</span>
+
+            <h3>
+              Validate
+            </h3>
+
+            <p>
+              Profile completeness, consistency, units, dimensions and
+              missingness before analytical use.
+            </p>
+
+          </article>
+
+
+          <article class="method-card">
+
+            <span>03</span>
+
+            <h3>
+              Harmonize
+            </h3>
+
+            <p>
+              Apply repeatable transformation rules across geography,
+              time and indicator definitions.
+            </p>
+
+          </article>
+
+
+          <article class="method-card">
+
+            <span>04</span>
+
+            <h3>
+              Visualize
+            </h3>
+
+            <p>
+              Convert validated structures into interpretable,
+              responsive and decision-oriented views.
+            </p>
+
+          </article>
+
+
+          <article class="method-card">
+
+            <span>05</span>
+
+            <h3>
+              Explain
+            </h3>
+
+            <p>
+              Allow controlled natural-language exploration while
+              preserving evidence traceability.
+            </p>
+
+          </article>
+
+
+          <article class="method-card">
+
+            <span>06</span>
+
+            <h3>
+              Transfer
+            </h3>
+
+            <p>
+              Document architecture, analytical rules and workflows for
+              institutional ownership and handover.
+            </p>
+
+          </article>
+
+        </div>
+
+
+        <article class="disclaimer-panel">
+
+          <strong>
+            Prototype data notice
+          </strong>
+
+          <p>
+            All data, indicators, documents and analytical outputs
+            displayed in this prototype are synthetic and illustrative.
+            They are designed solely to demonstrate IDE SpA's proposed
+            functional and technical approach for UNDP-ZAF-00238 and
+            do not represent official UNDP or Government of South
+            Africa information.
+          </p>
+
+        </article>
+
+      </section>
+
+
+    </main>
+
+  </div>
+
+
+  <script src="app.js"></script>
+
+</body>
+
+</html>
